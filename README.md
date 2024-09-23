@@ -22,18 +22,58 @@
 5. **Self-Improvement with Machine Learning**:
    While still in its early stages, AutoMAS includes a machine learning agent that can eventually analyze data from logs, tests, and application performance. In future versions, this will enable AutoMAS to predict issues before they happen, apply performance optimizations, and learn from past projects to improve future developments.
 
-## Vision for the Future:
-AutoMAS is more than just a development tool—it's the beginning of a fully autonomous software engineering assistant. Here are some features and advancements we plan to add in future releases:
+## How to Use AutoMAS
 
-- **Frontend Framework Support**: While AutoMAS currently focuses on backend code generation, future updates will introduce support for frontend frameworks like React, Vue.js, and Angular, enabling full-stack generation in one go.
-- **Advanced Machine Learning Models**: In the near future, AutoMAS will leverage AI to make intelligent suggestions, predict potential errors, and optimize both code and system performance automatically.
-- **Cloud-Native Deployment**: AutoMAS aims to integrate with containerization technologies like Docker and orchestration platforms like Kubernetes, providing fully automated cloud deployments with scaling and self-healing capabilities.
-- **Collaborative Development**: Future updates will include collaborative features, where multiple developers or teams can work together within the AutoMAS framework, sharing generated codebases, CI/CD configurations, and monitoring setups.
-- **Security Enhancements**: Security is a priority. AutoMAS will incorporate automated security checks, vulnerability scanning, and secure coding practices as part of the code generation and deployment pipeline.
+1. **Generate a Backend Project**:
+   Run the following command to generate a backend application:
+   ```bash
+   node src/agents/code_generator_agent.js <project_name>
+   ```
 
-### Why AutoMAS?
-By fully automating the repetitive and time-consuming parts of the development lifecycle, AutoMAS frees up teams to focus on innovation, problem-solving, and creativity. Whether you're a startup looking for a way to quickly spin up applications or an enterprise team seeking to optimize your development workflows, AutoMAS empowers you to achieve more with less.
+2. **Run Unit Tests**:
+   After generating your project, you can run the generated tests:
+   ```bash
+   node src/agents/test_agent.js <project_name>
+   ```
 
-### Future Vision
-The next major step for AutoMAS is expanding the **machine learning** capabilities. In future versions, AutoMAS will be able to perform automatic performance analysis and system optimizations using insights from past projects. With integration of **Docker** and **Kubernetes**, AutoMAS will allow cloud-native, self-scaling applications that are fully automated and self-healing.
+3. **Setup CI/CD Pipeline**:
+   AutoMAS can automatically set up a CI/CD pipeline using GitHub Actions. Run this command to generate the pipeline:
+   ```bash
+   node src/agents/cicd_agent.js <project_name>
+   ```
 
+4. **Monitoring**:
+   To set up application monitoring with Prometheus, use:
+   ```bash
+   node src/agents/monitoring_agent.js <project_name>
+   ```
+
+## Installation Instructions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/SirCrypto1983/AutoMAS-Autonomous-Application-Development-Deployment-System.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd AutoMAS-Autonomous-Application-Development-Deployment-System
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+## Contributing
+We welcome contributions from the community. To contribute:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit the changes (`git commit -m "Add new feature"`).
+5. Push to your branch (`git push origin feature-branch`).
+6. Create a pull request.
+
+Please ensure that all pull requests are properly tested before submission.
+
+## Roadmap
+- **Frontend Framework Support**: While AutoMAS currently focuses on backend code generation, future updates will introduce support for frontend frameworks like React, Vue.js, and Angular.
+- **Advanced Machine Learning**: AutoMAS will leverage machine learning to predict potential issues and optimize applications automatically.
+- **Cloud-Native Deployments**: Integration with containerization platforms like Docker and orchestration tools like Kubernetes for automated cloud deployments.
