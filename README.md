@@ -22,33 +22,49 @@
 5. **Self-Improvement with Machine Learning**:
    While still in its early stages, AutoMAS includes a machine learning agent that can eventually analyze data from logs, tests, and application performance. In future versions, this will enable AutoMAS to predict issues before they happen, apply performance optimizations, and learn from past projects to improve future developments.
 
-## Internal Workings of Agents
+## How to Use AutoMAS
 
-### Code Generator Agent
-The **Code Generator Agent** is responsible for creating the initial structure of the backend application using Node.js and Express. It provides a basic REST API template that can be further customized by the user. This agent can be extended to support frontend generation as well.
+1. **Generate a Backend Project**:
+   Run the following command to generate a backend application:
+   ```bash
+   node src/agents/code_generator_agent.js <project_name>
+   ```
 
-### Test Agent
-The **Test Agent** automatically generates test cases for the backend application. It leverages Mocha and Chai to create unit and integration tests. These tests ensure that the API responds correctly to requests and that each route functions as expected.
+2. **Run Unit Tests**:
+   After generating your project, you can run the generated tests:
+   ```bash
+   node src/agents/test_agent.js <project_name>
+   ```
 
-### CI/CD Pipeline Agent
-The **CI/CD Pipeline Agent** sets up an automated deployment pipeline using GitHub Actions. It runs tests on every commit, checks for linting and formatting errors, and optionally deploys the application if all tests pass. The pipeline can be extended to deploy to platforms like Heroku.
+3. **Setup CI/CD Pipeline**:
+   AutoMAS can automatically set up a CI/CD pipeline using GitHub Actions. Run this command to generate the pipeline:
+   ```bash
+   node src/agents/cicd_agent.js <project_name>
+   ```
 
-### Monitoring Agent
-The **Monitoring Agent** configures basic monitoring using Prometheus. This agent generates a `prometheus.yml` configuration file to track the health of the application and report metrics such as uptime and response times.
+4. **Monitoring**:
+   To set up application monitoring with Prometheus, use:
+   ```bash
+   node src/agents/monitoring_agent.js <project_name>
+   ```
 
-### Machine Learning Agent
-The **Machine Learning Agent** is currently a placeholder for future development. It will eventually analyze log data and application performance metrics to predict potential issues and recommend optimizations.
+## Docker Support
 
-## Use Cases
+### Build and Run with Docker
 
-1. **Small Development Teams**
-   AutoMAS is ideal for small development teams that need to quickly generate and deploy applications without the overhead of setting up complex CI/CD pipelines or testing frameworks. The system automates much of the repetitive work, allowing teams to focus on building features.
+AutoMAS supports Docker for easy containerization and deployment. Follow these steps to build and run the application in a Docker container:
 
-2. **Enterprise Applications**
-   Large organizations can use AutoMAS to standardize the application development process across teams. By automating testing, deployment, and monitoring, AutoMAS ensures consistency and reliability across all applications.
+1. **Build the Docker Image**:
+   ```bash
+   docker build -t automas-app .
+   ```
 
-3. **Rapid Prototyping**
-   For startups or solo developers, AutoMAS enables rapid prototyping. Within minutes, developers can generate a functioning backend, run tests, and deploy to production environments without worrying about manual setup.
+2. **Run the Docker Container**:
+   ```bash
+   docker run -p 3000:3000 automas-app
+   ```
+
+The application will be available at `http://localhost:3000`.
 
 ## Installation Instructions
 
