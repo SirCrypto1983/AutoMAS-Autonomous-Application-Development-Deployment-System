@@ -35,3 +35,6 @@ jobs:
 
     - name: Run Prettier for code formatting
       run: npm run format
+
+    - name: Run npm audit for security vulnerabilities
+      run: npm audit
