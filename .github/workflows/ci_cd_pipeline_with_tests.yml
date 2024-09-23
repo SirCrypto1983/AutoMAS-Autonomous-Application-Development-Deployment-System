@@ -1,0 +1,31 @@
+
+name: Node.js CI/CD Pipeline with Testing
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js \${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: \${{ matrix.node-version }}
+
+    - run: npm install
+
+    - run: npm test
+
+    # Optionally add deployment steps if tests pass
+    # For example, deploy to Heroku or another platform if all tests pass
