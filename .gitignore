@@ -1,0 +1,7 @@
+
+# Ignore logs, temp files, and other unwanted files
+*.log
+*.tmp
+*.pyc
+__pycache__/
+.env
